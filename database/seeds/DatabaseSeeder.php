@@ -2,6 +2,10 @@
 
 use Illuminate\Database\Seeder;
 
+function addTimestamp($item) {
+    return array_merge($item, ['created_at' => DB::raw('CURRENT_TIMESTAMP'), 'updated_at' => DB::raw('CURRENT_TIMESTAMP')]);
+}
+
 class DatabaseSeeder extends Seeder
 {
     /**
